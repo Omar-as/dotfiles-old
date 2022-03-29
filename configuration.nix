@@ -100,6 +100,12 @@
      nodejs
 	 python3
 	 stow
+	 unityhub
+	 gnome.nautilus
+	 zoom-us
+	 discord
+	 jetbrains.idea-ultimate
+	 jetbrains.rider
      ((vim_configurable.override { python = python3; }).customize{
       name = "vim";
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
