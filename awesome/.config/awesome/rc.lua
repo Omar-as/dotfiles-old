@@ -43,6 +43,9 @@ do
 end
 -- }}}
 
+-- startup:
+awful.spawn.with_shell("blueman-applet")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
