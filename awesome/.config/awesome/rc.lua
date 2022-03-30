@@ -240,6 +240,15 @@ globalkeys = gears.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
+	awful.key({}, "XF86AudioRaiseVolume", function ()
+			awful.util.spawn("pamixer -i 5 --allow-boost --set-limit 300")
+	end),
+	awful.key({}, "XF86AudioLowerVolume", function ()
+			awful.util.spawn("pamixer -d 5 --allow-boost --set-limit 300")
+	end),
+	awful.key({}, "XF86AudioMute", function ()
+			awful.util.spawn("pamixer -t --allow-boost --set-limit 300")
+	end),
 
     awful.key({ modkey,           }, "j",
         function ()

@@ -64,7 +64,7 @@
   # services.printing.enable = true;
 
   # Enable sound.
-   sound.enable = true;
+  sound.enable = true;
   # hardware.pulseaudio.enable = true;
   # rtkit is optional but recommended
   security.rtkit.enable = true;
@@ -145,6 +145,7 @@
 	 discord
 	 jetbrains.idea-ultimate
 	 jetbrains.rider
+	 pamixer
      ((vim_configurable.override { python = python3; }).customize{
       name = "vim";
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
