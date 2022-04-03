@@ -149,6 +149,8 @@
 	 dotnet-sdk
 	 msbuild
 	 fd
+	 openjdk
+	 libreoffice
      ((vim_configurable.override { python = python3; }).customize{
       name = "vim";
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
