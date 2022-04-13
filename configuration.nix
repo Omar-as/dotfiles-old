@@ -54,7 +54,12 @@
 
   #For internet icon
   programs.nm-applet.enable = true;
-  
+
+  #For Lock Screen in suspend and hibernate
+  services.physlock = {
+		enable = true;
+		allowAnyUser = true;
+	};
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
