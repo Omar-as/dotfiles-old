@@ -2,6 +2,9 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+-- Removed Tmux shortcuts on Super(windows)+s
+package.loaded["awful.hotkeys_popup.keys.tmux"] = {}
+
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
@@ -351,7 +354,10 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    --awful.key({ modkey }, "p", function() menubar.show() end,
+              --{description = "show the menubar", group = "launcher"})
+	awful.key({ modkey }, "p", function ()
+			awful.util.spawn("rofi -show drun -show-icons") end,
               {description = "show the menubar", group = "launcher"})
 )
 
