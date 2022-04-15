@@ -1,21 +1,20 @@
 #!/bin/sh
 
 selected=$(echo "suspend
-hibernate 
+hibernate
 shutdown" | rofi -dmenu "power menu")
 
-echo "$selected"
-if [[ $selected = "suspend" ]]
+if [[ "$selected" == "suspend" ]]
 then
 		systemctl suspend
 fi
 
-if [[ $selected = "hibernate" ]]
+if [[ "$selected" == "hibernate" ]]
 then
 		systemctl hibernate
 fi
 
-if [[ $selected = "shutdown" ]]
+if [[ "$selected" == "shutdown" ]]
 then
 		systemctl poweroff
 fi
