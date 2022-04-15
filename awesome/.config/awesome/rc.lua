@@ -358,8 +358,11 @@ globalkeys = gears.table.join(
               --{description = "show the menubar", group = "launcher"})
 	awful.key({ modkey }, "p", function ()
 			awful.util.spawn("rofi -show drun -show-icons") end,
-              {description = "show the menubar", group = "launcher"})
-)
+              {description = "show the menubar", group = "launcher"}),
+	awful.key({ modkey, "Shift" }, "p", function ()
+			awful.spawn.with_shell("bash ~/dotfiles/rofi/.config/rofi/power_menu.sh") end,
+              {description = "show the poweroff options", group = "launcher"})
+			  )
 
 clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",

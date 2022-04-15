@@ -145,3 +145,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+//@theme "/nix/store/zbzi8k6bvnjv2ph8ajsgxsdij0w7f624-rofi-1.7.0/share/rofi/themes/Monokai.rasi"
+@theme "/nix/store/zbzi8k6bvnjv2ph8ajsgxsdij0w7f624-rofi-1.7.0/share/rofi/themes/gruvbox-dark.rasi"
