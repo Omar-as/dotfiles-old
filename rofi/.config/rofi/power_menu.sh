@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 selected=$(echo "suspend
 hibernate
