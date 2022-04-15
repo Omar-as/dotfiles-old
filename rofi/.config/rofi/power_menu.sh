@@ -1,20 +1,17 @@
 #!/usr/bin/env bash
 
-selected=$(echo "suspend
-hibernate
-shutdown" | rofi -dmenu "power menu")
+selected=$(echo -e "suspend\nhibernate\nlock\nreboot\nshutdown" | rofi -dmenu "power menu")
 
-if [[ "$selected" == "suspend" ]]
+if [[ "$selected" == "lock" ]]
 then
-		systemctl suspend
-fi
-
-if [[ "$selected" == "hibernate" ]]
+		physlock
+elif [[ "$selected" == "shutdown" || "$selected" == "reboot" ]]
 then
-		systemctl hibernate
-fi
-
-if [[ "$selected" == "shutdown" ]]
-then
-		systemctl poweroff
+		choice=$(echo -e "no\nyes" | rofi -dmenu "are you sure")
+		if [[ "$choice" == "yes" ]]
+		then
+				systemctl $selected
+		fi
+else
+	systemctl $selected
 fi
