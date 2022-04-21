@@ -126,7 +126,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.omar = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager" "libvirtd"]; # Enable ‘sudo’ for the user.
    };
 
   # List packages installed in system profile. To search, run:
@@ -156,6 +156,7 @@
 	 openjdk
 	 libreoffice
 	 rofi
+	 virt-manager
      ((vim_configurable.override { python = python3; }).customize{
       name = "vim";
       vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
@@ -197,6 +198,10 @@
       '';
     })
    ];
+
+  #vert manager
+  virtualisation.libvirtd.enable = true;
+	programs.dconf.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
